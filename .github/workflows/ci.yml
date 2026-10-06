@@ -1,0 +1,16 @@
+name: CI Workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print repository info
+        run: |
+          echo "Hello from GitHub Actions!"
+          echo "Repository name: ${{ github.repository }}"
+          echo "Run number: ${{ github.run_number }}"
